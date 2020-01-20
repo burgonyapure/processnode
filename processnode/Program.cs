@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace processnode
 {
@@ -6,7 +7,14 @@ namespace processnode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Process[] processlist = Process.GetProcesses();
+
+            foreach (Process theprocess in processlist)
+            {
+                Console.WriteLine("Process: {0} ID: {1}", theprocess.ProcessName, theprocess.Id);
+               
+            }
+            Console.ReadLine();
         }
     }
 }

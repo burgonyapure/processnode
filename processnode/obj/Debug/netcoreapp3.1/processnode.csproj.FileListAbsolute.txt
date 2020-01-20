@@ -1,0 +1,11 @@
+C:\Users\teszt\source\repos\processnode\processnode\bin\Debug\netcoreapp3.1\processnode.exe
+C:\Users\teszt\source\repos\processnode\processnode\bin\Debug\netcoreapp3.1\processnode.deps.json
+C:\Users\teszt\source\repos\processnode\processnode\bin\Debug\netcoreapp3.1\processnode.runtimeconfig.json
+C:\Users\teszt\source\repos\processnode\processnode\bin\Debug\netcoreapp3.1\processnode.runtimeconfig.dev.json
+C:\Users\teszt\source\repos\processnode\processnode\bin\Debug\netcoreapp3.1\processnode.dll
+C:\Users\teszt\source\repos\processnode\processnode\bin\Debug\netcoreapp3.1\processnode.pdb
+C:\Users\teszt\source\repos\processnode\processnode\obj\Debug\netcoreapp3.1\processnode.csprojAssemblyReference.cache
+C:\Users\teszt\source\repos\processnode\processnode\obj\Debug\netcoreapp3.1\processnode.AssemblyInfoInputs.cache
+C:\Users\teszt\source\repos\processnode\processnode\obj\Debug\netcoreapp3.1\processnode.AssemblyInfo.cs
+C:\Users\teszt\source\repos\processnode\processnode\obj\Debug\netcoreapp3.1\processnode.dll
+C:\Users\teszt\source\repos\processnode\processnode\obj\Debug\netcoreapp3.1\processnode.pdb
