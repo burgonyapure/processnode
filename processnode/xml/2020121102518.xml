@@ -1,3 +1,4 @@
 <Process ProcessName="/process ID/">
+  <memory>/ram/</memory>
   <Comment>/Comment/</Comment>
 </Process>
