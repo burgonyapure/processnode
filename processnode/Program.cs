@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace processnode { 
     class Program
     {
-        
         static void Main(string[] args)
         {
+ 
             Process[] processlist = Process.GetProcesses();
             string ls = null;
             string[] commands = new string[]{"ls - List all processes","q - quit"};
+
+            xml.writeXml();
             while (ls != "q")
             {
                 Console.Write("User@win10> ");
@@ -20,7 +23,7 @@ namespace processnode {
                     {
                         if (theprocess.Id != 0)
                         {
-                            Console.WriteLine("Process: {0} ID: {1} CPU: asd", theprocess.ProcessName, theprocess.Id);
+                            Console.WriteLine("Process: {0} ID: {1} MEM:{2} K", theprocess.ProcessName, theprocess.Id, Convert.ToDouble(theprocess.WorkingSet64)/100000);
                         }
                     }
                     Console.WriteLine("Number of processes running: {0}", processlist.Length);
@@ -32,6 +35,7 @@ namespace processnode {
                         Console.WriteLine(commands[i]);
                     }
                 }
+                
 
             }
         }
