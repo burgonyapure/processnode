@@ -10,7 +10,7 @@ namespace processnode {
  
             Process[] processlist = Process.GetProcesses();
             string ls = null;
-            string[] commands = new string[]{"ls - List all processes","q - quit"};
+            string[] commands = new string[]{"ls - List all processes","teszt", "q - quit"};
 
             while (ls != "q")
             {
