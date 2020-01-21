@@ -56,7 +56,7 @@ namespace processnode {
                                 
                             } 
                         }
-                        if (!vaneID) { Console.WriteLine("Nincs ilyen id")};
+                        if (!vaneID) { Console.WriteLine("Nincs ilyen id"); };
                     }
                 }           
                 else
