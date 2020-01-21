@@ -1,27 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Processes>
-  <Process cmd="20768">
-    <Memory>21,791 K</Memory>
-    <Comment>Adeajojpojpojpoj</Comment>
-  </Process>
-  <Process cmd="10780">
-    <Memory>21,750 K</Memory>
-    <Comment>ADEDADE</Comment>
-  </Process>
-  <Process cmd="20544">
-    <Memory>21,791 K</Memory>
-    <Comment>Cmd</Comment>
-  </Process>
-  <Process chrome="5512">
-    <Memory>770,580 K</Memory>
-    <Comment>asdaded</Comment>
-  </Process>
-  <Process conhost="8760">
-    <Memory>130,417 K</Memory>
-    <Comment>adedead</Comment>
-  </Process>
-  <Process msvsmon="10156">
-    <Memory>315,515 K</Memory>
-    <Comment>Nagyon jó</Comment>
-  </Process>
-</Processes>
+<Processes></Processes>

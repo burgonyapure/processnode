@@ -16,7 +16,6 @@ namespace processnode {
             {
                 Console.Write("User@win10> ");
                 ls = Console.ReadLine();
-               
                 if (ls == "ls")
                 {
                     foreach (Process theprocess in processlist)
@@ -58,7 +57,12 @@ namespace processnode {
                         }
                         if (!vaneID) { Console.WriteLine("Nincs ilyen id"); };
                     }
-                }           
+                }
+                if (ls == "ls -l")
+                {
+                    ListProcessesByRam.ListProcesses();
+                }
+
                 else
                 {
                     for (int i = 0; i < commands.Length; i++)

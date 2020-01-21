@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\codecool\\c#\\OOP [MSC] 2nd TW\\processnode\\processnode\\processnode.csproj": {}
+    "C:\\Users\\teszt\\source\\repos\\processnode\\processnode\\processnode.csproj": {}
   },
   "projects": {
-    "D:\\codecool\\c#\\OOP [MSC] 2nd TW\\processnode\\processnode\\processnode.csproj": {
+    "C:\\Users\\teszt\\source\\repos\\processnode\\processnode\\processnode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\codecool\\c#\\OOP [MSC] 2nd TW\\processnode\\processnode\\processnode.csproj",
+        "projectUniqueName": "C:\\Users\\teszt\\source\\repos\\processnode\\processnode\\processnode.csproj",
         "projectName": "processnode",
-        "projectPath": "D:\\codecool\\c#\\OOP [MSC] 2nd TW\\processnode\\processnode\\processnode.csproj",
-        "packagesPath": "C:\\Users\\Geris\\.nuget\\packages\\",
-        "outputPath": "D:\\codecool\\c#\\OOP [MSC] 2nd TW\\processnode\\processnode\\obj\\",
+        "projectPath": "C:\\Users\\teszt\\source\\repos\\processnode\\processnode\\processnode.csproj",
+        "packagesPath": "C:\\Users\\teszt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\teszt\\source\\repos\\processnode\\processnode\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Geris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\teszt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
