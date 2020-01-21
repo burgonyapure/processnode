@@ -12,6 +12,8 @@ namespace processnode
     {
         public static void ListProcesses()
         {
+            ConsoleSpinner spinIt = new ConsoleSpinner();
+            spinIt.Delay = 400;
             while (true)
             {
                 if (!Console.KeyAvailable)
@@ -42,11 +44,21 @@ namespace processnode
 
                     for (int i = myList.Count - 1; i >= myList.Count - 10; i--)
                     {
-                        Console.Write("{0} | {1}", myList[i].Key, (Convert.ToDouble(myList[i].Value) / 1048576).ToString("N4") + " MB\n");
+                        Console.Write("{0} || {1}", myList[i].Key, (Convert.ToDouble(myList[i].Value) / 1048576).ToString("N4") + " MB\n");
 
                     }
                     Console.SetCursorPosition(0, Console.CursorTop - 10);
                     Thread.Sleep(1000);
+                    Console.Clear();
+                    /*while (true)
+                    {
+                        Console.SetCursorPosition(10, Console.CursorTop);
+                        spinIt.Turn(displayMsg: "Nagyon mérek mo ", sequenceCode: 2);
+                        break;
+                    }
+                    */
+                    
+                    
                 }
                 else
                 {
