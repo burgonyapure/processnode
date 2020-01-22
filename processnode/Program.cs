@@ -37,7 +37,7 @@ namespace processnode {
                         xmlComment[1] = Convert.ToString(theprocess.Id);
                         xmlComment[2] = (Convert.ToDouble(theprocess.WorkingSet64) / 100000).ToString("N3") + " K";
                         xmlComment[3] = comment;
-                        xml.writeXml(xmlComment);
+                        Xml.writeXml(xmlComment);
 
                     }
                 }
@@ -147,10 +147,19 @@ namespace processnode {
                                                                                  
                 }
                 
-                if(ls == "test")
+                if(ls == "save")
                 {
-                    xml.saveXml(saveSession());
+                    listAll();
+                    Console.WriteLine("Save this session to an XML? (y/n)");
+                    string ans = Console.ReadLine();
+                    if (ans == "Y" || ans == "y")
+                    {
+                        Xml.saveXml(saveSession());
+                        Console.WriteLine("saved!");
+                    }
+                    
                 }
+                
                 else
                 {
                     Console.WriteLine();

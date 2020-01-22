@@ -7,11 +7,19 @@ using System.IO;
 
 namespace processnode
 {
-    class xml
+    class Xml
     {
         public static void saveXml(List<string> arrProc)
         {
-            var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Processes.xml";
+            //Generate some unique names, based on the time of creation.
+            //This name can be used backwards, to tell the user when this was created.
+            DateTime most = DateTime.Now;
+            string fileName;
+            fileName = Convert.ToString(most.Year) + Convert.ToString(most.Month) + Convert.ToString(most.Day) + Convert.ToString(most.Hour) + Convert.ToString(most.Minute) + Convert.ToString(most.Second);
+
+            var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\"+ fileName +".xml";
+            XElement newDoc = new XElement("Processes");
+            newDoc.Save(filePath);
             var xmlDoc = XDocument.Load(filePath);
             for (int i = 0; i < arrProc.Count; i++)
             {
@@ -25,8 +33,8 @@ namespace processnode
                 parentElement.Add(firstNameElement);
                 var rootElement = xmlDoc.Element("Processes");
                 rootElement?.Add(parentElement);
-                xmlDoc.Save(filePath);
-            }          
+            }
+            xmlDoc.Save(filePath);
         }
         public static void writeXml(string[] xmlComment) {
             var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\comment.xml";

@@ -6,4 +6,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="xml\Exported_sessions\" />
+  </ItemGroup>
+
 </Project>
