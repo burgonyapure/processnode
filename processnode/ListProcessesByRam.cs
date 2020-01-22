@@ -14,7 +14,7 @@ namespace processnode
         public static void ListProcesses()
         {
             ConsoleSpinner spinIt = new ConsoleSpinner();
-            spinIt.Delay = 300;
+            spinIt.Delay = 200;
             while (true)
             {
                 if (!Console.KeyAvailable)
@@ -39,7 +39,7 @@ namespace processnode
                         Console.Write("{0} | {1}", myList[i].Key, (Convert.ToDouble(myList[i].Value) / (1024*1024)).ToString("N4") + " MB\n");
                     }
                     Console.WriteLine();
-                    spinIt.Turn("Workeeen ", 0);
+                    spinIt.Turn("Its doin somethin... ", 0);
                     Console.SetCursorPosition(0, Console.CursorTop - 11);
                 }
 
