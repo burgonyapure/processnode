@@ -24,7 +24,9 @@ namespace processnode
             { "+", "x","+","x",/*".","","","","","","" */ },
             { "V", "<", "^", ">",/*".","","","","","","" */ },
             { ".   ", "..  ", "... ", "....",/*".","","","","","","" */ },
-            { "=>   ", "==>  ", "===> ", "====>",/*".","","","","","","" */ },
+            { "=>   ", "==>  ", "===>", "\t IT DED",/*".","","","","","","" */ },
+            { "=>   ", "==>  ", "===>","====>"},
+            
             //{"I love python","i Love python","i lOve python","i loVe python","i lovE python","i love Python","i love pYthon","i love pyThon","i love pytHon","i love pythOn","i love pythoN" },
             //Jöhet még ide
             };

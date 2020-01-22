@@ -78,10 +78,11 @@ namespace processnode {
         {
  
             string ls = null;
-            string[] commands = new string[]{"ls - List all processes","q - quit","kill - kill a process by ID"};
+            string[] commands = new string[]{"ls - List all processes","ls -l - List the first 10 processes in online mode","kill - kill a process by ID","q - Quit"};
 
             while (ls != "q")
             {
+                //Comands "commands xd"
                 Console.Write("User@win10> ");
                 ls = Console.ReadLine();
                 if (ls == "ls")
@@ -123,12 +124,20 @@ namespace processnode {
                             else { haveID = false; }
                         }
 
+                        ConsoleSpinner killAnimation = new ConsoleSpinner();
+                        killAnimation.Delay = 1000;
+
                         Process killable = Process.GetProcessById(Convert.ToInt32(idToKill));
                         Console.WriteLine("Are you sure u wanna kill {0} (y/n)?", killable.ProcessName);
                         string ans = Console.ReadLine();
                         if (ans == "Y" || ans == "y")
                         {
                             killable.Kill();
+                            for (int i = 0; i < 4; i++)
+                            {
+                                killAnimation.Turn("I'm killin it m8", 5);
+                            }
+                            Console.WriteLine();
                             Console.WriteLine("i think he dieded");
                         }
                         else
@@ -142,7 +151,7 @@ namespace processnode {
                     }
                     catch (Exception) when (haveID == false)
                     {
-                        Console.WriteLine("No such id");
+                        Console.WriteLine("Nah m8 go fck urself no id like that");
                     }
                                                                                  
                 }
