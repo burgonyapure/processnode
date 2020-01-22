@@ -60,9 +60,21 @@ namespace processnode {
                 }
                 if (ls == "ls -l")
                 {
+                    //Parallel.Invoke(() => ListProcessesByRam.ListProcesses(), () => spin());
                     ListProcessesByRam.ListProcesses();
                 }
-
+                //if (ls == "p")
+                //{
+                //    consolespinner spin = new consolespinner();
+                //    while (true)
+                //    {
+                //        spin.turn("workin boi ", 6);
+                //    }
+                //}
+                if (ls == "cls")
+                {
+                    Console.Clear();
+                }
                 else
                 {
                     for (int i = 0; i < commands.Length; i++)

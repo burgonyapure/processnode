@@ -17,15 +17,18 @@ namespace processnode
         public ConsoleSpinner()
         {
             counter = 0;
+
             sequence = new string[,] {
-            { "/", "-", "\\", "|" },
-            { ".", "o", "0", "o" },
-            { "+", "x","+","x" },
-            { "V", "<", "^", ">" },
-            { ".   ", "..  ", "... ", "...." },
-            { "=>   ", "==>  ", "===> ", "====>" },
-           // ADD YOUR OWN CREATIVE SEQUENCE HERE IF YOU LIKE
-        };
+            { "/", "-", "\\", "|"/*,".","","","","","",""*/ },
+            { ".", "o", "0", "*",/*".","","","","","","" */ },
+            { "+", "x","+","x",/*".","","","","","","" */ },
+            { "V", "<", "^", ">",/*".","","","","","","" */ },
+            { ".   ", "..  ", "... ", "....",/*".","","","","","","" */ },
+            { "=>   ", "==>  ", "===> ", "====>",/*".","","","","","","" */ },
+            {"","","","" },
+            //{"I love python","i Love python","i lOve python","i loVe python","i lovE python","i love Python","i love pYthon","i love pyThon","i love pytHon","i love pythOn","i love pythoN" },
+            //Jöhet még ide
+            };
 
             totalSequences = sequence.GetLength(0);
         }
@@ -33,7 +36,7 @@ namespace processnode
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 </param>
+        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 | 6 </param>
         public void Turn(string displayMsg = "", int sequenceCode = 0)
         {
             counter++;
@@ -46,9 +49,8 @@ namespace processnode
 
             string fullMessage = displayMsg + sequence[sequenceCode, counterValue];
             int msglength = fullMessage.Length;
-
+            
             Console.Write(fullMessage);
-
             Console.SetCursorPosition(Console.CursorLeft - msglength, Console.CursorTop);
         }
     }
