@@ -41,8 +41,8 @@ namespace processnode
                     Console.WriteLine();
                     spinIt.Turn("Its doin somethin... ", 0);
                     Console.SetCursorPosition(0, Console.CursorTop - 11);
+                    
                 }
-
                 else
                 {
                     Console.Clear();
