@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Processes>
-  <Process chrome="40064">
-    <Memory>717,578 K</Memory>
-    <Comment>Fasza</Comment>
+  <Process>
+    <Name>chrome</Name>
+    <ID>27984</ID>
+    <Memory>214,548 K</Memory>
+    <Comment>Tell me why</Comment>
+  </Process>
+  <Process>
+    <Name>notepad++</Name>
+    <ID>21616</ID>
+    <Memory>287,007 K</Memory>
+    <Comment>Ain't nothin but a heartbreak</Comment>
   </Process>
 </Processes>

@@ -4,21 +4,41 @@ using System.Text;
 using System.Xml.Linq;
 using System.Xml;
 using System.IO;
+using System.Linq;
+using System.Collections;
 
 namespace processnode
 {
     class Xml
     {
+        private static void ModifyXml(string path,string strTextToInsert, int iInsertAtLineNumber)
+        {
+            ArrayList lines = new ArrayList();
+            StreamReader rdr = new StreamReader(path);
+            string line;
+            while ((line = rdr.ReadLine()) != null) lines.Add(line);
+
+            rdr.Close();
+
+            if (lines.Count > iInsertAtLineNumber)lines.Insert(iInsertAtLineNumber,strTextToInsert);
+            else lines.Add(strTextToInsert);
+
+            StreamWriter wrtr = new StreamWriter(path);
+
+            foreach (string strNewLine in lines) wrtr.WriteLine(strNewLine);
+
+            wrtr.Close();
+        }
         public static void saveXml(List<string> arrProc)
         {
             //Generate some unique names, based on the time of creation.
             //This name can be used backwards, to tell the user when this was created.
-            DateTime most = DateTime.Now;
             string fileName;
-            fileName = Convert.ToString(most.Year) + Convert.ToString(most.Month) + Convert.ToString(most.Day) + Convert.ToString(most.Hour) + Convert.ToString(most.Minute) + Convert.ToString(most.Second);
+            fileName = DateTime.Now.ToString("yyyy") + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd") +DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss");
 
             var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\"+ fileName +".xml";
             XElement newDoc = new XElement("Processes");
+            //newDoc.Add(new XElement("Processes"));
             newDoc.Save(filePath);
             var xmlDoc = XDocument.Load(filePath);
             for (int i = 0; i < arrProc.Count; i++)
@@ -35,14 +55,25 @@ namespace processnode
                 rootElement?.Add(parentElement);
             }
             xmlDoc.Save(filePath);
+
+            ModifyXml(filePath, "<ProcessCollection>", 1);
+            using (StreamWriter sw = File.AppendText(filePath))
+            {
+                sw.Write("</ProcessCollection>");
+            }
         }
         public static void writeXml(string[] xmlComment) {
             var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\comment.xml";
             var xmlDoc = XDocument.Load(filePath);
-            var parentElement = new XElement("Process",new XAttribute(xmlComment[0],xmlComment[1]));
+
+            var parentElement = new XElement("Process");
+            var nameElement = new XElement("Name", xmlComment[0]);
+            var idElement = new XElement("ID", xmlComment[1]);
             var firstNameElement = new XElement("Memory", xmlComment[2]);
             var lastNameElement = new XElement("Comment", xmlComment[3]);
 
+            parentElement.Add(nameElement);
+            parentElement.Add(idElement);
             parentElement.Add(firstNameElement);
             parentElement.Add(lastNameElement);
 

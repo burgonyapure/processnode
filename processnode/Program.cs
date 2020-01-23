@@ -47,13 +47,13 @@ namespace processnode {
         static void listAll()
         {
             var processlist = allProcesses();
-
+            Diplay.PrintLine();
             foreach (Process theprocess in processlist)
             {
                 if (theprocess.Id != 0)
                 {
-                    Console.WriteLine("Process: {0} ID: {1} MEM:{2} K", theprocess.ProcessName, theprocess.Id, Convert.ToDouble(theprocess.WorkingSet64) / 100000);
-
+                    Diplay.PrintRow(new string[] { theprocess.ProcessName, Convert.ToString(theprocess.Id), (Convert.ToDouble(theprocess.WorkingSet64) / (1024 * 1024)).ToString("N4") + " MB" });
+                    Diplay.PrintLine();
                 }
             }
             Console.WriteLine("Number of processes running: {0}", processlist.Length);
@@ -76,12 +76,14 @@ namespace processnode {
         }
         static void Main(string[] args)
         {
- 
+            
             string ls = null;
-            string[] commands = new string[]{"ls - List all processes","ls -l - List the first 10 processes in online mode","kill - kill a process by ID","q - Quit"};
+            string[] commands = new string[]{"ls - List all processes","ls -l - List the first 10 processes in online mode",
+                "kill - kill a process by ID","save - save the listed session","load - Load one of the previously saved sessions","cls - Clear Console","q - Quit"};
 
             while (ls != "q")
             {
+                
                 //Comands "commands xd"
                 Console.Write("User@win10> ");
                 ls = Console.ReadLine();
@@ -135,7 +137,7 @@ namespace processnode {
                             killable.Kill();
                             for (int i = 0; i < 4; i++)
                             {
-                                killAnimation.Turn("I'm killin it m8", 5);
+                                killAnimation.Turn("I'm killin it m8  ", 5);
                             }
                             Console.WriteLine();
                             Console.WriteLine("i think he dieded");
@@ -169,6 +171,29 @@ namespace processnode {
                     
                 }
                 
+                if (ls == "load")
+                {
+                    LoadSession test = new LoadSession();
+                    for (int i = 0; i < test.names.Count; i++)
+                    {
+                        Console.WriteLine("{0}. \t{1} -- \tCreated on {2}.{3}.{4} at {5}:{6}:{7}",i+1, test.names[i], test.year[i], test.month[i], test.day[i], test.hour[i], test.minute[i], test.second[i]);
+                    }
+                    Console.Write("Load: ");
+                    int choice;
+                    try
+                    {
+                        choice = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(choice);
+                        test.doIt(choice);
+                    }
+                   
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("the id must be a numba");
+                    }
+                   
+                }
+
                 else
                 {
                     Console.WriteLine();
