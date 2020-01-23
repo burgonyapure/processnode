@@ -4,6 +4,14 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>test.pfx</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>pepe.ico</ApplicationIcon>
+    <Authors>ItsyaBoi Steeeve</Authors>
+    <Company>Mradmin</Company>
+    <Product>Process lister</Product>
+    <Description>What the actual hell</Description>
+    <Copyright>©2020 pepe Works</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

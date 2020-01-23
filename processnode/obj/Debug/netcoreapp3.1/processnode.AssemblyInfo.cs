@@ -11,11 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("processnode")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Mradmin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("©2020 pepe Works")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("What the actual hell")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("processnode")]
+[assembly: System.Reflection.AssemblyProductAttribute("Process lister")]
 [assembly: System.Reflection.AssemblyTitleAttribute("processnode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
