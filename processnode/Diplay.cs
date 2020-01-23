@@ -6,7 +6,7 @@ namespace processnode
 {
     public class Diplay
     {
-        static int tableWidth = 150;
+        static int tableWidth = 90;
         public static void PrintLine()
         {
             Console.WriteLine(new string('-', tableWidth));
