@@ -26,6 +26,7 @@ namespace processnode
             { ".   ", "..  ", "... ", "....",/*".","","","","","","" */ },
             { "=>   ", "==>  ", "===>", "\t IT DED",/*".","","","","","","" */ },
             { "=>   ", "==>  ", "===>", "\tSUCCESS",/*".","","","","","","" */ },
+            { "=>   ", "==>  ", "===>", "\tFAILED",/*".","","","","","","" */ },
             { "=>   ", "==>  ", "===>","====>"},
             
             //{"I love python","i Love python","i lOve python","i loVe python","i lovE python","i love Python","i love pYthon","i love pyThon","i love pytHon","i love pythOn","i love pythoN" },
@@ -38,7 +39,7 @@ namespace processnode
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 | 6 </param>
+        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 | 6 | 7 </param>
         public void Turn(string displayMsg = "", int sequenceCode = 0)
         {
             counter++;

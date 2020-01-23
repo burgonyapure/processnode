@@ -36,7 +36,7 @@ namespace processnode
             string fileName;
             fileName = DateTime.Now.ToString("yyyy") + DateTime.Now.ToString("MM") + DateTime.Now.ToString("dd") +DateTime.Now.ToString("HH") + DateTime.Now.ToString("mm") + DateTime.Now.ToString("ss");
 
-            var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\"+ fileName +".xml";
+            var filePath = @"xml\Exported_sessions\"+fileName + ".xml";
             XElement newDoc = new XElement("Processes");
             //newDoc.Add(new XElement("Processes"));
             newDoc.Save(filePath);
@@ -63,7 +63,7 @@ namespace processnode
             }
         }
         public static void writeXml(string[] xmlComment) {
-            var filePath = @"C:\Users\teszt\source\repos\processnode\processnode\xml\comment.xml";
+            var filePath = @"xml\comment.xml";
             var xmlDoc = XDocument.Load(filePath);
 
             var parentElement = new XElement("Process");

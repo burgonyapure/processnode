@@ -41,7 +41,7 @@ namespace processnode
         }
         public LoadSession()
         {
-            path = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\";
+            path = @"xml\Exported_sessions\";
             DirectoryInfo d = new DirectoryInfo(path);
             foreach (var file in d.GetFiles("*.xml"))
             {
@@ -60,29 +60,44 @@ namespace processnode
 
         public void doIt(int idx)
         {
-            //ConsoleSpinner load = new ConsoleSpinner();
-            //load.Delay = 1000;
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    load.Turn("Loadin", 6);
-            //}
-            //Console.WriteLine(names[idx-1]);
+            ConsoleSpinner load = new ConsoleSpinner();
+            load.Delay = 1000;
 
-            string file2open = path + names[idx - 1];
-            //string file2open = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\20200123102052.xml";
-            ProcessCollection processes = null;
-            string xmlPath = file2open;
+            try
+            {
+                string file2open = path + names[idx - 1];
+                for (int i = 0; i < 4; i++)
+                {
+                    load.Turn("Loadin ", 6);
+                }
+                Console.WriteLine();
+                //Console.WriteLine(names[idx-1]);
 
-            XmlSerializer serializer = new XmlSerializer(typeof(ProcessCollection));
+                
+                //string file2open = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\20200123102052.xml";
+                ProcessCollection processes = null;
+                string xmlPath = file2open;
 
-            StreamReader reader = new StreamReader(xmlPath);
-            processes = (ProcessCollection)serializer.Deserialize(reader);
-            reader.Close();
-            Diplay.PrintLine();
-            for (int i = 0; i < processes.Process.Length; i++)
-            {               
-                Diplay.PrintRow(new string[] { processes.Process[i].Name, processes.Process[i].ID, processes.Process[i].Memory });
+                XmlSerializer serializer = new XmlSerializer(typeof(ProcessCollection));
+
+                StreamReader reader = new StreamReader(xmlPath);
+                processes = (ProcessCollection)serializer.Deserialize(reader);
+                reader.Close();
                 Diplay.PrintLine();
+                for (int i = 0; i < processes.Process.Length; i++)
+                {
+                    Diplay.PrintRow(new string[] { processes.Process[i].Name, processes.Process[i].ID, processes.Process[i].Memory });
+                    Diplay.PrintLine();
+                }
+
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    load.Turn("Loadin ",7);
+                }
+                Console.WriteLine("Reason: No Id like that");
             }
             
 
