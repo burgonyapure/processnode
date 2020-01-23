@@ -97,6 +97,7 @@ namespace processnode {
                 if (ls == "ls -l")
                 {
                     //Parallel.Invoke(() => ListProcessesByRam.ListProcesses(), () => spin());
+                    Console.Clear();
                     ListProcessesByRam.ListProcesses();
                 }
                
@@ -127,7 +128,7 @@ namespace processnode {
                         }
 
                         ConsoleSpinner killAnimation = new ConsoleSpinner();
-                        killAnimation.Delay = 1000;
+                        killAnimation.Delay = 500;
 
                         Process killable = Process.GetProcessById(Convert.ToInt32(idToKill));
                         Console.WriteLine("Are you sure u wanna kill {0} (y/n)?", killable.ProcessName);
@@ -135,7 +136,7 @@ namespace processnode {
                         if (ans == "Y" || ans == "y")
                         {
                             killable.Kill();
-                            for (int i = 0; i < 4; i++)
+                            for (int i = 0; i < 8; i++)
                             {
                                 killAnimation.Turn("I'm killin it m8  ", 5);
                             }
@@ -183,7 +184,7 @@ namespace processnode {
                     try
                     {
                         choice = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine(choice);
+                        //Console.WriteLine(choice);
                         test.doIt(choice);
                     }
                    

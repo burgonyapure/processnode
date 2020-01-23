@@ -40,8 +40,7 @@ namespace processnode
                     }
                     Console.WriteLine();
                     spinIt.Turn("Workin In Online Mode boi ", 0);
-                    Console.SetCursorPosition(0, Console.CursorTop - 11);
-                    
+                    Console.SetCursorPosition(0, Console.CursorTop - 11);                    
                 }
                 else
                 {

@@ -61,12 +61,12 @@ namespace processnode
         public void doIt(int idx)
         {
             ConsoleSpinner load = new ConsoleSpinner();
-            load.Delay = 1000;
+            load.Delay = 350;
 
             try
             {
                 string file2open = path + names[idx - 1];
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     load.Turn("Loadin ", 6);
                 }
@@ -93,7 +93,7 @@ namespace processnode
             }
             catch (ArgumentOutOfRangeException)
             {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     load.Turn("Loadin ",7);
                 }
