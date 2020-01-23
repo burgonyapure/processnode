@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 
 namespace processnode
-{ 
-    
+{
     class Program
     {
         static Process[] allProcesses()
@@ -60,7 +59,6 @@ namespace processnode
             }
             Console.WriteLine("Number of processes running: {0}", processlist.Length);
         }
-
         static List<string> saveSession()
         {
             var processlist = allProcesses();
@@ -78,14 +76,12 @@ namespace processnode
         }
         static void Main(string[] args)
         {
-            
             string ls = null;
             string[] commands = new string[]{"ls - List all processes","ls -l - List the first 10 processes in online mode",
                 "kill - kill a process by ID","save - save the listed session","load - Load one of the previously saved sessions","cls - Clear Console","q - Quit"};
 
             while (ls != "q")
-            {
-                
+            {               
                 //Comands "commands xd"
                 Console.Write("User@win10> ");
                 ls = Console.ReadLine();

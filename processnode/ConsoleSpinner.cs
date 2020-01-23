@@ -39,7 +39,7 @@ namespace processnode
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 | 6 | 7 </param>
+        /// <param name="sequenceCode"> 0 - simple | 1 - circle | 2 - somethin |3 | 4 | 5 - DED | 6 - SUCCESS | 7 - FAILED </param>
         public void Turn(string displayMsg = "", int sequenceCode = 0)
         {
             counter++;

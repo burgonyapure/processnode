@@ -48,7 +48,7 @@ namespace processnode
                 string fname = Path.GetFileName(Convert.ToString(file));
                 names.Add(fname);
                 fname = fname.Split('.')[0];
-                //20200123104001
+                
                 year.Add(Convert.ToInt32(fname.Substring(0,4)));
                 month.Add(fname.Substring(4, 2));
                 day.Add(fname.Substring(6, 2));
@@ -60,6 +60,7 @@ namespace processnode
 
         public void doIt(int idx)
         {
+
             ConsoleSpinner load = new ConsoleSpinner();
             load.Delay = 350;
 
@@ -71,10 +72,7 @@ namespace processnode
                     load.Turn("Loadin ", 6);
                 }
                 Console.WriteLine();
-                //Console.WriteLine(names[idx-1]);
-
-                
-                //string file2open = @"C:\Users\teszt\source\repos\processnode\processnode\xml\Exported_sessions\20200123102052.xml";
+               
                 ProcessCollection processes = null;
                 string xmlPath = file2open;
 
@@ -89,7 +87,6 @@ namespace processnode
                     Diplay.PrintRow(new string[] { processes.Process[i].Name, processes.Process[i].ID, processes.Process[i].Memory });
                     Diplay.PrintLine();
                 }
-
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -99,8 +96,6 @@ namespace processnode
                 }
                 Console.WriteLine("Reason: No Id like that");
             }
-            
-
         }
     }
 }
