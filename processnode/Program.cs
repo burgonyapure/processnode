@@ -9,9 +9,6 @@ namespace processnode
     
     class Program
     {
-        [assembly: AssemblyTitle("MyApplication")]
-        [assembly: AssemblyDescription("This application is a sample application.")]
-        [assembly: AssemblyCopyright("Copyright © MyCompany 2009")]
         static Process[] allProcesses()
         {
             Process[] processlist = Process.GetProcesses();
